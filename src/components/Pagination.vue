@@ -57,7 +57,7 @@ function isPageActive(page) {
 
 <template>
   <nav aria-label="Episodes Page navigation">
-    <ul class="inline-flex -pace-x-px h-10">
+    <ul class="inline-flex h-10">
       <li>
         <button type="button" @click="onPageChange(1)" :disabled="isInFirstPage" aria-label="Go to first page"
           class="flex items-center justify-center px-3 h-10 ms-0 text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed">
