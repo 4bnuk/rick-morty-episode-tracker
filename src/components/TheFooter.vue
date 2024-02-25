@@ -7,7 +7,7 @@
             target="_blank" href="https://icons8.com">Icons8</a>
         </div>
       </div>
-      <a href="https://github.com/4bnuk" target="_blank">
+      <a href="https://github.com/4bnuk" target="_blank" aria-label="Github">
         <svg class="w-8 h-8 mt-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 32 32">
           <path d="M16 2a14 14 0 0 0-4.43 27.28c.7.13 1-.3 1-.67v-2.38c-3.89.84-4.71-1.88-4.71-1.88a3.71 3.71 0 0 
