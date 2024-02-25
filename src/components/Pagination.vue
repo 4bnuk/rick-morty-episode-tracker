@@ -57,18 +57,26 @@ function isPageActive(page) {
 
 <template>
   <nav aria-label="Episodes Page navigation">
-    <ul class="text-white inline-flex -space-x-px text-base h-10">
+    <ul class="inline-flex -pace-x-px h-10">
       <li>
         <button type="button" @click="onPageChange(1)" :disabled="isInFirstPage" aria-label="Go to first page"
-          class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed">
-          First
+          class="flex items-center justify-center px-3 h-10 ms-0 text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed">
+          <span class="sr-only">First Page</span>
+          <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m17 16-4-4 4-4m-6 8-4-4 4-4" />
+          </svg>
         </button>
       </li>
       <li>
         <button type="button" @click="onPageChange(currentPage - 1)" :disabled="isInFirstPage"
           aria-label="Go to previous page"
-          class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed">
-          Previous
+          class="flex items-center justify-center px-3 h-10 text-gray-500 bg-white border border-gray-300 hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed">
+          <span class="sr-only">Previous</span>
+          <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m14 8-4 4 4 4" />
+          </svg>
         </button>
       </li>
       <li v-for="page in pages" :key="page.name">
@@ -76,21 +84,29 @@ function isPageActive(page) {
           :aria-label="`Go to page number ${page.name}`" class="flex items-center justify-center px-4 h-10 border" :class="[
             isPageActive(page.name)
               ? 'text-white border-gray-300 bg-green-custom hover:bg-green-custom hover:text-white dark:border-gray-700 dark:bg-yellow-custom dark:text-white'
-              : 'leading-tight text-gray-500 bg-white border-gray-300 hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed'
+              : 'text-gray-500 bg-white border-gray-300 hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed'
           ]">
           {{ page.name }}
         </button>
       </li>
       <li>
         <button type="button" @click="onPageChange(currentPage + 1)" :disabled="isInLastPage" aria-label="Go to next page"
-          class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed">
-          Next
+          class="flex items-center justify-center px-3 h-10 text-gray-500 bg-white border border-gray-300 hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed">
+          <span class="sr-only">Next</span>
+          <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m10 16 4-4-4-4" />
+          </svg>
         </button>
       </li>
       <li>
         <button type="button" @click="onPageChange(totalPages)" :disabled="isInLastPage" aria-label="Go to last page"
-          class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed">
-          Last
+          class="flex items-center justify-center px-3 h-10 text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-green-custom hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-yellow-custom dark:hover:text-white disabled:cursor-not-allowed">
+          <span class="sr-only">Last Page</span>
+          <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m7 16 4-4-4-4m6 8 4-4-4-4" />
+          </svg>
         </button>
       </li>
     </ul>
